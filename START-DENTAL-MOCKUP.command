@@ -17,7 +17,8 @@ if ! command -v claude >/dev/null; then
 fi
 
 if ! security find-generic-password -a "$USER" -s openai.api-key -w >/dev/null 2>&1; then
-  print "Paste the OpenAI API key into the secure Keychain prompt. Nothing will be saved in this folder."
+  print "A secure Keychain prompt is next. Click this Terminal, paste the OpenAI API key, and press Return. The characters will not appear; that is normal."
+  print "Nothing will be saved in this folder or sent to Claude Code."
   security add-generic-password -U -a "$USER" -s openai.api-key -w
 fi
 
