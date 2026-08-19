@@ -1,23 +1,16 @@
-# Dental Mockup Claude Code Skill
+# Dental mockups in Claude Code
 
-Clone this repository, open it in Claude Code, and use the `/generate-dental-mockup` command to create or edit dental concept previews with OpenAI GPT Image 2.
+No Git knowledge needed.
 
-## Two-minute setup
-
-```zsh
-git clone https://github.com/sajor2000/dental-mockup-claude-skill.git
-cd dental-mockup-claude-skill
-security add-generic-password -U -a "$USER" -s openai.api-key -w
-export OPENAI_API_KEY="$(security find-generic-password -a "$USER" -s openai.api-key -w)"
-claude
-```
-
-The Keychain command securely prompts for the API key once; never paste a key into Claude or save it in this repository.
-
-Attach a patient photograph, then paste:
+1. On this GitHub page, click **Code**, then **Download ZIP**. Double-click the downloaded ZIP.
+2. Open the new folder and double-click **START-DENTAL-MOCKUP.command**. The first time, macOS may require right-click → **Open**.
+3. When Terminal asks, copy and paste the OpenAI API key into its secure Keychain prompt. The key is saved in the Mac login Keychain, never in this folder or Claude chat. Claude Code then opens automatically.
+4. Drag the patient photo into Claude Code and paste:
 
 ```text
 /generate-dental-mockup Full aesthetic upgrade. Line up midlines top and bottom. Improve shade. Improve symmetry. Replace missing tooth. Veneers #3-14.
 ```
 
-For a local reference image, add `--input /absolute/path/to/patient.png`. Read [START-HERE.md](.claude/skills/generate-dental-mockup/START-HERE.md) for the full guide. Outputs are local at `~/Data/dental-mockups/`; never use Dropbox.
+Claude will show the expanded dental prompt before generating one low-quality concept image and ask what should change. Images save locally at `~/Data/dental-mockups/`, never Dropbox.
+
+If Claude Code is already open, close it and start it with `START-DENTAL-MOCKUP.command` so it receives the Keychain-backed API key.

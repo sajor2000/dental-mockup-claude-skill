@@ -13,12 +13,11 @@ Before generating, read `${CLAUDE_SKILL_DIR}/references/dental-anatomy.md`. Expa
 
 ## API key
 
-Start Claude Code from a terminal with the key set for that session. This keeps the key out of chat, the repository, and shell history:
+If `OPENAI_API_KEY` is missing, do not ask the user to paste it into chat. Store it in the macOS login Keychain, then start Claude Code from that terminal:
 
 ```zsh
-read -rs "OPENAI_API_KEY?OpenAI API key: "
-print
-export OPENAI_API_KEY
+security add-generic-password -U -a "$USER" -s openai.api-key -w
+export OPENAI_API_KEY="$(security find-generic-password -a "$USER" -s openai.api-key -w)"
 claude
 ```
 
