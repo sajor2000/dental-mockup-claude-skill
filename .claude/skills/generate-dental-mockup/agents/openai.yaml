@@ -1,0 +1,4 @@
+interface:
+  display_name: "Generate Dental Mockup"
+  short_description: "Generate or edit patient dental images with GPT Image 2"
+  default_prompt: "Generate or edit a patient-specific dental mockup from my prompt using GPT Image 2."
